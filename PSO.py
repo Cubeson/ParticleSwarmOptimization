@@ -134,16 +134,6 @@ for i in range(population):
     if swarm[i].LocalBest.Cost < GlobalBest.Cost or GlobalBest.Cost == math.inf:
         GlobalBest.Cost = swarm[i].LocalBest.Cost
         GlobalBest.Position = swarm[i].LocalBest.Position.copy()
-#tmpPos = [] * population
-#tmpCost = [] * population
-#tmpHistory = [] * iterations
-# History in one iteration
-class History():
-    Position = [None] * population # each Particle's positions in 1 iteration
-    Cost = [None] * population# each Particle's cost in it's position
-
-# History of all iterations
-#history = [History] * iterations
 
 # Main Loop
 out = ""
@@ -158,8 +148,7 @@ for i in range(iterations):
         out = out + "Cost = "
         out = out + str(swarm[j].Cost)
         out = out + "\n"
-        #history[i].Position[j] = swarm[j].Position
-        #history[i].Cost[j] = swarm[j].Cost
+        
     BestCosts.append(GlobalBest.Cost)
     if allowPrint:
         print("""Iteration {}: Best Cost = {}""".format(i, BestCosts[i]))
