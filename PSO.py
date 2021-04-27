@@ -92,7 +92,7 @@ class Particle:
 # pick one of these functions
 # Sphere Rastrigin StyblinskiTang Rosenbrock
 Function = Sphere
-Dimensions = 3
+Dimensions = 2
 lowerBound = -5  # lower bound
 upperBound = 5  # upper bound
 allowPrint = False
