@@ -133,25 +133,31 @@ for i in range(population):
         GlobalBest.Position = swarm[i].LocalBest.Position.copy()
 
 # Main Loop
-out = ""
+out = "iteration;particle;"
+for i in range(Dimensions):
+    out = out + "dimension" + str(i) + ";"
+out = out + "cost\n"
 for i in range(iterations):
-    out = out + ("iteration: {}\n".format(i))
+    #out = out + ("iteration: {}\n".format(i))
     for j in range(population):
-        out = out + ("particle: {} ".format(j))
+        out = out + str(i) + ";"
+        #out = out + ("particle: {} ".format(j))
+        out = out + str(j) + ";"
         swarm[j].update()
         for pos in swarm[j].Position:
             out = out + str(pos)
-            out = out + " "
-        out = out + "Cost = "
+            out = out + ";"
+        #out = out + "Cost = "
         out = out + str(swarm[j].Cost)
         out = out + "\n"
-        
+
     BestCosts.append(GlobalBest.Cost)
     if allowPrint:
         print("""Iteration {}: Best Cost = {}""".format(i, BestCosts[i]))
     w = w * wdamp
-out = out + "\n\nBest Cost: {}\nAt position: {}".format(GlobalBest.Cost, GlobalBest.Position)
-f = open("output.txt","w")
+#out = out + "\n\nBest Cost: {}\nAt position: {}".format(GlobalBest.Cost, GlobalBest.Position)
+f = open("output.txt", "w")
+out.strip()
 f.write(out)
 f.close()
 # Result
@@ -161,4 +167,3 @@ pyplot.xlabel('iteration')
 pyplot.ylabel('cost')
 pyplot.savefig('output.png')
 pyplot.show()
-
