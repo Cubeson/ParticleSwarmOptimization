@@ -93,8 +93,8 @@ class Particle:
 # Sphere Rastrigin StyblinskiTang Rosenbrock
 Function = Sphere
 Dimensions = 2
-lowerBound = -5  # lower bound
-upperBound = 5  # upper bound
+lowerBound = -5.12  # lower bound
+upperBound = 5.12  # upper bound
 allowPrint = False
 
 # Clerc & Kennedy Constriction Coefficients
@@ -159,5 +159,6 @@ print("Final Best Cost is: {}\nAt position: {}".format(GlobalBest.Cost, GlobalBe
 pyplot.plot(BestCosts)
 pyplot.xlabel('iteration')
 pyplot.ylabel('cost')
+pyplot.savefig('output.png')
 pyplot.show()
 
