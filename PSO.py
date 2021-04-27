@@ -89,6 +89,7 @@ class Particle:
 # End Particle
 
 #
+# pick one of these functions
 # Sphere Rastrigin StyblinskiTang Rosenbrock
 Function = Sphere
 Dimensions = 3
@@ -115,12 +116,8 @@ population = 50
 iterations = 50
 w = chi  # inertia coefficient
 wdamp = 1  # Damping Ratio of Inertia coefficient
-# w = 0.75
-# wdamp = 0.99
 c1 = chi * phi1  # cognitive coefficient
 c2 = chi * phi2  # social coefficient
-# c1 = 1
-# c2 = 2
 
 MaxVelocity = 0.4 * (upperBound - lowerBound)
 MinVelocity = MaxVelocity * -1
