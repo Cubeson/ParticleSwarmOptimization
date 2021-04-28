@@ -21,14 +21,6 @@ def StyblinskiTang(X):
 def Rosenbrock(X):
     return sum([(100*(x+1 - x**2)**2) for x in X])
 
-
-def randVarSize():  # get a vector of size==nVar
-    tmpList = []
-    for tmp in range(Dimensions):
-        tmpList.append(random.random())
-    return tmpList
-
-
 class Best:
     def __init__(self):
         self.Position = []
